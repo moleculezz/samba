@@ -19,15 +19,15 @@
 default["samba"]["global_params"] = {
   "workgroup" => "SAMBA",
   "interfaces" => "lo 127.0.0.1",
-  "hosts_allow" => "127.0.0.0/8",
-  "bind_interfaces_only" => "no",
-  "server_string" => "Samba Server",
-  "load_printers" => "no",
+  "hosts allow" => "127.0.0.0/8",
+  "bind interfaces only" => "no",
+  "server string" => "Samba Server",
+  "load printers" => "no",
   "passdb_backend" => "tdbsam",
-  "dns_proxy" => "no",
+  "dns proxy" => "no",
   "security" => "user",
-  "map_to_guest" => "bad user",
-  "socket_options" => "TCP_NODELAY"
+  "map to guest" => "bad user",
+  "socket options" => "TCP_NODELAY"
 }
 
 case platform
