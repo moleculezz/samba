@@ -6,15 +6,9 @@
 #
 
 [global]
-  workgroup = <%= node["samba"]["workgroup"] %>
-  server string = <%= node["samba"]["server_string"] %>
-  security = <%= node["samba"]["security"] %>
-  interfaces = <%= node["samba"]["interfaces"] %>
-  hosts allow = <%= node["samba"]["hosts_allow"] %>
-  load printers = <%= node["samba"]["load_printers"] %>
-  passdb backend = <%= node["samba"]["passdb_backend"] %>
-  dns proxy = <%= node["samba"]["dns_proxy"] %>
-  map to guest = <%= node["samba"]["map_to_guest"] %>
+<% node["samba"]["global_params"].each do |name,value| -%>
+  <%= name %> = <% value %>
+<% end -%>
 
 #============================ Share Definitions ==============================
 <% @shares.each do |share,option| -%>

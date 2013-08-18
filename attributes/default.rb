@@ -16,17 +16,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default["samba"]["workgroup"] = "SAMBA"
-default["samba"]["interfaces"] = "lo 127.0.0.1"
-default["samba"]["hosts_allow"] = "127.0.0.0/8"
-default["samba"]["bind_interfaces_only"] = "no"
-default["samba"]["server_string"] = "Samba Server"
-default["samba"]["load_printers"] = "no"
-default["samba"]["passdb_backend"] = "tdbsam"
-default["samba"]["dns_proxy"] = "no"
-default["samba"]["security"] = "user"
-default["samba"]["map_to_guest"] = "Bad User"
-default["samba"]["socket_options"] = "TCP_NODELAY"
+default["samba"]["global_params"] = {
+  "workgroup" => "SAMBA",
+  "interfaces" => "lo 127.0.0.1",
+  "hosts_allow" => "127.0.0.0/8",
+  "bind_interfaces_only" => "no",
+  "server_string" => "Samba Server",
+  "load_printers" => "no",
+  "passdb_backend" => "tdbsam",
+  "dns_proxy" => "no",
+  "security" => "user",
+  "map_to_guest" => "bad user",
+  "socket_options" => "TCP_NODELAY"
+}
 
 case platform
 when "arch"
